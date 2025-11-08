@@ -32,7 +32,7 @@ async function getProducts() {
 
 function getCardHTML(product) {
   return `<div class="card" style="width: 18rem;">
-  <img src="img/${product.img} class="card-img-top" alt="...">
+  <img src="/img/${product.img}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
     <p class="card-text">${product.price}</p>
@@ -45,7 +45,7 @@ class ShoppingCart {
   constructor() {
     this.items = {}; // об’єкт з товарами у кошику
     this.total = 0; // загальна вартість замовлення
-    this.loadCartFromCookies
+    this.loadCartFromCookies()
   }
 
 
@@ -126,12 +126,12 @@ function get_item(item) {
             </div>`;
 }
 function showCartList() {
-  cart_list.innerHTML = "";
+ // cart_list.innerHTML = "";
   for (let key in cart.items) {
     // проходимося по всіх ключах об'єкта cart.items
     cart_list.innerHTML += get_item(cart.items[key]);
   }
-  cart_total.innerHTML = cart.calculateTotal();
+  //cart_total.innerHTML = cart.calculateTotal();
 }
 
 
