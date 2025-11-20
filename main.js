@@ -111,7 +111,7 @@ function addToCart(event) {
   // Отримуємо дані про товар з data-атрибута кнопки
   const productData = event.target.getAttribute("data-product");
   const product = JSON.parse(productData);
-
+event.preventDefault();
   // Додаємо товар до кошика
   cart.addItem(product);
   console.log(cart);
